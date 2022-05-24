@@ -10,9 +10,9 @@
       </p>
     <script>
         const worker  = new Worker('worker.js');
-        worker.postMessage('Hello from the main thread!');
+        worker.postMessage({'col1': [1, 2], 'col2': [3, 4]});
         worker.onmessage = function(e) {
-            document.getElementById('title').innerHTML = e.data;
+            console.log(e.data);
         };
 
     </script>
